@@ -1,0 +1,30 @@
+{
+  "name": "angulardemo",
+  "version": "0.0.0",
+  "description": "practice application using mean stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/david-ford/AngularDemo.git"
+  },
+  "author": "David Ford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/david-ford/AngularDemo/issues"
+  },
+  "homepage": "https://github.com/david-ford/AngularDemo#readme",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "jade": "^1.10.0",
+    "mongoose": "^4.0.3",
+    "morgan": "^1.5.3",
+    "stylus": "^0.51.1"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1"
+  }
+}
