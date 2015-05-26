@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "0.12.x",
+    "npm": "2.10.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/david-ford/AngularDemo.git"

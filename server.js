@@ -25,7 +25,8 @@ app.use(stylus.middleware(
 ));
 app.use(express.static(__dirname + '/public'));
 
-mongoose.connect('mongodb://localhost/angulardb');
+//mongoose.connect('mongodb://localhost/angulardb');
+mongoose.connect('mongodb://dford:angapppass@ds051160.mongolab.com:51160/angulardb');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'error connecting to the database...'));
 db.once('open', function callback(){
@@ -49,6 +50,6 @@ app.get('*', function(request, response) {
     });
 });
 
-var port = 3030;
+var port = process.env.PORT || 3030;
 app.listen(port);
 console.log('Listening on port ' + port + '...');
