@@ -12,4 +12,13 @@ angular.module('app').controller('mvNavBarLoginCtrl',
             }
         });
     }
+
+    $scope.signout = function() {
+        mvAuth.logoutUser().then(function(){
+            $scope.username = "";
+            $scope.password = "";
+            mvNotifier.notify('You have signed out!');
+            $location.path('/')
+        })
+    }
 });
