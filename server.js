@@ -36,8 +36,8 @@ db.once('open', function callback(){
     console.log('angular db opened');
 });
 
-app.get('/partials/:partialPath', function(request, response) {
-    response.render('partials/' + request.params.partialPath);
+app.get('/partials/*', function(request, response) {
+    response.render('../../public/app/' + request.params[0]);
 });
 
 app.get('*', function(request, response) {
