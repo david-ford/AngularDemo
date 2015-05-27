@@ -36,21 +36,12 @@ db.once('open', function callback(){
     console.log('angular db opened');
 });
 
-var messageSchema = mongoose.Schema({message: String});
-var Message = mongoose.model('message', messageSchema);
-var mongoMessage;
-Message.findOne().exec(function(err, messageDoc) {
-   mongoMessage = messageDoc.message;
-});
-
 app.get('/partials/:partialPath', function(request, response) {
     response.render('partials/' + request.params.partialPath);
 });
 
 app.get('*', function(request, response) {
-	response.render('index', {
-        mongoMessage: mongoMessage
-    });
+	response.render('index');
 });
 
 var port = process.env.PORT || 3030;
