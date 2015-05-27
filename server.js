@@ -13,9 +13,9 @@ require('./server/config/express')(app, config);
 require('./server/config/mongoose')(config);
 require('./server/config/routes')(app);
 
-var User = mongoose.model('user');
+var User = mongoose.model('User');
 passport.use(new LocalStrategy(
-    function(username,password, done) {
+    function(username, password, done) {
         User.findOne({username:username}).exec(function(err, user){
             if(user) {
                 return done(null, user);
