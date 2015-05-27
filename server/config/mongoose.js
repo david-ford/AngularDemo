@@ -15,7 +15,14 @@ module.exports = function (config) {
         username: String,
         salt: String,
         hashed_pwd: String
-    })
+    });
+
+    userSchema.methods = {
+        authenticate: function (passwordToMatch) {
+            return hashPwd(this.salt, passwordToMatch) === this.hashed_pwd;
+        }
+    };
+
     var User = mongoose.model('User', userSchema);
     User.find({}).exec(function (err, collection) {
         if (collection.length === 0) {
