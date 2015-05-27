@@ -1,50 +1,15 @@
-var express = require('express'),
-    stylus = require('stylus'),
-    logger = require('morgan'),
-    bodyParser = require('body-parser'),
-    mongoose = require('mongoose');
+var express = require('express');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
 
-function compile(str, path) {
-    return stylus(str).set('filename', path);
-}
+var config = require('./server/config/config')[env];
 
-app.set('views', __dirname + '/server/views');
-app.set('view engine', 'jade');
-app.use(logger('dev'));
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-app.use(stylus.middleware(
-    {
-        src: __dirname + '/public',
-        compile: compile
-    }
-));
-app.use(express.static(__dirname + '/public'));
+require('./server/config/express')(app, config);
+require('./server/config/mongoose')(config);
+require('./server/config/routes')(app);
 
-if (env == 'development') {
-    mongoose.connect('mongodb://localhost/angulardb');
-} else {
-    mongoose.connect('mongodb://dford:angapppass@ds051160.mongolab.com:51160/angulardb');
-}
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'error connecting to the database...'));
-db.once('open', function callback(){
-    console.log('angular db opened');
-});
-
-app.get('/partials/*', function(request, response) {
-    response.render('../../public/app/' + request.params[0]);
-});
-
-app.get('*', function(request, response) {
-	response.render('index');
-});
-
-var port = process.env.PORT || 3030;
-app.listen(port);
-console.log('Listening on port ' + port + '...');
+app.listen(config.port);
+console.log('Listening on port ' + config.port + '...');
 console.log(env);
