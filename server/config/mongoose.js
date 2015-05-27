@@ -14,12 +14,12 @@ module.exports = function (config) {
         lastName: String,
         username: String,
         salt: String,
-        hashed_pwd: String
+        hash_pwd: String
     });
 
     userSchema.methods = {
         authenticate: function (passwordToMatch) {
-            return hashPwd(this.salt, passwordToMatch) === this.hashed_pwd;
+            return hashPwd(this.salt, passwordToMatch) === this.hash_pwd;
         }
     };
 
@@ -34,7 +34,7 @@ module.exports = function (config) {
                 lastName: 'Rayburn',
                 username: 'trayburn',
                 salt: salt,
-                hash: hash
+                hash_pwd: hash
             });
             var salt, hash;
             salt = createSalt();
@@ -44,7 +44,7 @@ module.exports = function (config) {
                 lastName: 'Ford',
                 username: 'dford',
                 salt: salt,
-                hash: hash
+                hash_pwd: hash
             });
             var salt, hash;
             salt = createSalt();
@@ -54,7 +54,7 @@ module.exports = function (config) {
                 lastName: 'Berry',
                 username: 'kberry',
                 salt: salt,
-                hash: hash
+                hash_pwd: hash
             });
         }
     })
