@@ -1,10 +1,10 @@
-var express         = require('express'),
-    logger          = require('morgan'),
-    bodyParser      = require('body-parser'),
-    stylus          = require('stylus'),
-    cookieParser    = require('cookie-parser'),
-    session         = require('express-session'),
-    passport        = require('passport');
+var express = require('express'),
+    logger = require('morgan'),
+    bodyParser = require('body-parser'),
+    stylus = require('stylus'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    passport = require('passport');
 
 module.exports = function (app, config) {
     function compile(str, path) {
@@ -31,4 +31,5 @@ module.exports = function (app, config) {
         }
     ));
     app.use(express.static(config.rootPath + '/public'));
-}
+};
+
