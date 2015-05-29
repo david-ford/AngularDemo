@@ -10,6 +10,8 @@
         app.post('/api/users', users.createUser);
         app.put('/api/users', users.updateUser);
         app.get('/api/courses', courses.getCourses);
+        app.get('/api/courses/:id', courses.getCourseById);
+
         app.get('/partials/*', function (req, res) {
             res.render('../../public/app/' + req.params[0]);
         });
@@ -21,7 +23,7 @@
         });
 
         app.all('/api/*', function (req, res) {
-            res.send(404);
+            res.sendStatus(404);
         });
 
         app.get('*', function (req, res) {
