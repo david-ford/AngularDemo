@@ -26,3 +26,9 @@ footer p {
 .toast-success {
   background-color: #337ab7;
 }
+.padding-top-med {
+  padding-top: 10px;
+}
+.margin-left-med {
+  margin-left: 10px;
+}

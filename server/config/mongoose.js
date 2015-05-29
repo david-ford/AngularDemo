@@ -1,6 +1,7 @@
 (function () {
     var mongoose = require('mongoose'),
-        userModel = require('../models/User');
+        userModel = require('../models/User'),
+        courseModel = require('../models/Course');
 
     module.exports = function (config) {
         mongoose.connect(config.db);
@@ -10,7 +11,7 @@
             console.log('angular db opened');
         });
 
-    userModel.createDefaultUsers();
-
+        userModel.createDefaultUsers();
+        courseModel.createDefaultCourses();
     };
 })();
