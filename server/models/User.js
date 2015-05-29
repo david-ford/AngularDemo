@@ -32,7 +32,7 @@
                 User.create({
                     firstName: 'Tim',
                     lastName: 'Rayburn',
-                    username: 'trayburn',
+                    username: 'trayburn@llama.com',
                     salt: salt,
                     hash_pwd: hash,
                     roles: ['admin']
@@ -43,7 +43,7 @@
                 User.create({
                     firstName: 'David',
                     lastName: 'Ford',
-                    username: 'dford',
+                    username: 'dford@llama.com',
                     salt: salt,
                     hash_pwd: hash,
                     roles: []
@@ -54,7 +54,7 @@
                 User.create({
                     firstName: 'Kevin',
                     lastName: 'Berry',
-                    username: 'kberry',
+                    username: 'kberry@llama.com',
                     salt: salt,
                     hash_pwd: hash,
                     roles: []
