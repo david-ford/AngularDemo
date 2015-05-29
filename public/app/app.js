@@ -23,7 +23,7 @@
             })
             .when('/signup', {
                 templateUrl: '/partials/account/signup',
-                controller: 'mvSignUpCtrl'
+                controller: 'mvSignupCtrl'
             })
     });
 
