@@ -4,8 +4,10 @@ An application to demonstrate working knowledge of Angular
 This application requires that you have MongoDb and Node installed.
 
 After downloading navigate to the project folder, and run the following commands
-* npm install
-* bower install
+<pre><code>
+$ npm install
+$ bower install
+</pre></code>
 
 Locally the application is hosted on port 3030. This can be changed in the config.js file located in server/config
 
