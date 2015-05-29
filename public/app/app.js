@@ -7,6 +7,11 @@
                 auth: function (mvAuth) {
                     return mvAuth.authorizeCurrentUserForRoute('admin');
                 }
+            },
+            user: {
+                auth: function (mvAuth) {
+                    return mvAuth.authorizeAuthenticatedUserForRoute();
+                }
             }
         };
 
@@ -24,6 +29,11 @@
             .when('/signup', {
                 templateUrl: '/partials/account/signup',
                 controller: 'mvSignupCtrl'
+            })
+            .when('/profile', {
+                templateUrl: '/partials/account/profile',
+                controller: 'mvProfileCtrl',
+                resolve: routeRoleChecks.user
             })
     });
 
