@@ -10,15 +10,19 @@ After downloading navigate to the project folder, and run the following commands
 Locally the application is hosted on port 3030. This can be changed in the config.js file located in server/config
 
 The default admin user is
-> login: trayburn@llama.com
-> pass: tim
+[code]
+login: trayburn@llama.com
+pass: tim
+[/code]
 
 A normal users are
-> login: dford@llama.com
-> pass: david
+[code]
+login: dford@llama.com
+pass: david
 
-> login: kberry@llama.com
-> pass: kevin
+login: kberry@llama.com
+pass: kevin
+[/code]
 
 Currently there are no additional admin controls beyond being able to view all of the current users registered on the site.
 
